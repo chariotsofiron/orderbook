@@ -1,0 +1,14 @@
+/Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles/orderbook.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles/edit_cache.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles/rebuild_cache.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles/list_install_components.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles/install.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles/install/local.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles/install/strip.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/_deps/fmt-build/CMakeFiles/fmt.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/_deps/fmt-build/CMakeFiles/edit_cache.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/_deps/fmt-build/CMakeFiles/rebuild_cache.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/_deps/fmt-build/CMakeFiles/list_install_components.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/_deps/fmt-build/CMakeFiles/install.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/_deps/fmt-build/CMakeFiles/install/local.dir
+/Users/benburk/Desktop/root/Repos/microstructure/build/_deps/fmt-build/CMakeFiles/install/strip.dir
