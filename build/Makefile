@@ -57,10 +57,10 @@ RM = /usr/local/Cellar/cmake/3.25.1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/benburk/Desktop/root/Repos/microstructure
+CMAKE_SOURCE_DIR = /Users/benburk/Desktop/root/Repos/orderbook
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/benburk/Desktop/root/Repos/microstructure/build
+CMAKE_BINARY_DIR = /Users/benburk/Desktop/root/Repos/orderbook/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles /Users/benburk/Desktop/root/Repos/microstructure/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles /Users/benburk/Desktop/root/Repos/orderbook/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -171,7 +171,7 @@ orderbook: cmake_check_build_system
 
 # fast build rule for target.
 orderbook/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orderbook.dir/build.make CMakeFiles/orderbook.dir/build
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/orderbook.dir/build.make src/CMakeFiles/orderbook.dir/build
 .PHONY : orderbook/fast
 
 #=============================================================================
@@ -187,30 +187,6 @@ fmt/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/build
 .PHONY : fmt/fast
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orderbook.dir/build.make CMakeFiles/orderbook.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orderbook.dir/build.make CMakeFiles/orderbook.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orderbook.dir/build.make CMakeFiles/orderbook.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -225,9 +201,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... fmt"
 	@echo "... orderbook"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
 .PHONY : help
 
 

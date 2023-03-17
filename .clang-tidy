@@ -1,0 +1,20 @@
+---
+# https://clang.llvm.org/extra/clang-tidy/checks/list.html
+Checks: >
+  -*,
+  bugprone*,
+  clang-analyzer*,
+  clang-diagnostic*,
+  concurrency*,
+  cppcoreguidelines*,
+  -cppcoreguidelines-avoid-magic-numbers,
+  misc*,
+  modernize*,
+  performance*,
+  readability*,
+  -readability-magic-numbers,
+  -bugprone-exception-escape
+
+WarningsAsErrors: '*'
+HeaderFilterRegex: '*'
+FormatStyle: none

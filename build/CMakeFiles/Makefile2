@@ -54,26 +54,27 @@ RM = /usr/local/Cellar/cmake/3.25.1/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/benburk/Desktop/root/Repos/microstructure
+CMAKE_SOURCE_DIR = /Users/benburk/Desktop/root/Repos/orderbook
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/benburk/Desktop/root/Repos/microstructure/build
+CMAKE_BINARY_DIR = /Users/benburk/Desktop/root/Repos/orderbook/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/orderbook.dir/all
-all: _deps/fmt-build/all
+all: src/all
+all: dependencies/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: _deps/fmt-build/preinstall
+preinstall: src/preinstall
+preinstall: dependencies/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/orderbook.dir/clean
-clean: _deps/fmt-build/clean
+clean: src/clean
+clean: dependencies/clean
 .PHONY : clean
 
 #=============================================================================
@@ -92,30 +93,60 @@ _deps/fmt-build/clean: _deps/fmt-build/CMakeFiles/fmt.dir/clean
 .PHONY : _deps/fmt-build/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/orderbook.dir
+# Directory level rules for directory dependencies
+
+# Recursive "all" directory target.
+dependencies/all: _deps/fmt-build/all
+.PHONY : dependencies/all
+
+# Recursive "preinstall" directory target.
+dependencies/preinstall: _deps/fmt-build/preinstall
+.PHONY : dependencies/preinstall
+
+# Recursive "clean" directory target.
+dependencies/clean: _deps/fmt-build/clean
+.PHONY : dependencies/clean
+
+#=============================================================================
+# Directory level rules for directory src
+
+# Recursive "all" directory target.
+src/all: src/CMakeFiles/orderbook.dir/all
+.PHONY : src/all
+
+# Recursive "preinstall" directory target.
+src/preinstall:
+.PHONY : src/preinstall
+
+# Recursive "clean" directory target.
+src/clean: src/CMakeFiles/orderbook.dir/clean
+.PHONY : src/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/orderbook.dir
 
 # All Build rule for target.
-CMakeFiles/orderbook.dir/all: _deps/fmt-build/CMakeFiles/fmt.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orderbook.dir/build.make CMakeFiles/orderbook.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orderbook.dir/build.make CMakeFiles/orderbook.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles --progress-num=4,5 "Built target orderbook"
-.PHONY : CMakeFiles/orderbook.dir/all
+src/CMakeFiles/orderbook.dir/all: _deps/fmt-build/CMakeFiles/fmt.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/orderbook.dir/build.make src/CMakeFiles/orderbook.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/orderbook.dir/build.make src/CMakeFiles/orderbook.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles --progress-num=4,5 "Built target orderbook"
+.PHONY : src/CMakeFiles/orderbook.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/orderbook.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/orderbook.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles 0
-.PHONY : CMakeFiles/orderbook.dir/rule
+src/CMakeFiles/orderbook.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/orderbook.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/orderbook.dir/rule
 
 # Convenience name for target.
-orderbook: CMakeFiles/orderbook.dir/rule
+orderbook: src/CMakeFiles/orderbook.dir/rule
 .PHONY : orderbook
 
 # clean rule for target.
-CMakeFiles/orderbook.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/orderbook.dir/build.make CMakeFiles/orderbook.dir/clean
-.PHONY : CMakeFiles/orderbook.dir/clean
+src/CMakeFiles/orderbook.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/orderbook.dir/build.make src/CMakeFiles/orderbook.dir/clean
+.PHONY : src/CMakeFiles/orderbook.dir/clean
 
 #=============================================================================
 # Target rules for target _deps/fmt-build/CMakeFiles/fmt.dir
@@ -124,14 +155,14 @@ CMakeFiles/orderbook.dir/clean:
 _deps/fmt-build/CMakeFiles/fmt.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles --progress-num=1,2,3 "Built target fmt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles --progress-num=1,2,3 "Built target fmt"
 .PHONY : _deps/fmt-build/CMakeFiles/fmt.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/fmt-build/CMakeFiles/fmt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/fmt-build/CMakeFiles/fmt.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/microstructure/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles 0
 .PHONY : _deps/fmt-build/CMakeFiles/fmt.dir/rule
 
 # Convenience name for target.

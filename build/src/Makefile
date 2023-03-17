@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles /Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-build//CMakeFiles/progress.marks
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/fmt-build/all
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles /Users/benburk/Desktop/root/Repos/orderbook/build/src//CMakeFiles/progress.marks
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/benburk/Desktop/root/Repos/orderbook/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/fmt-build/clean
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,12 +148,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/fmt-build/preinstall
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/fmt-build/preinstall
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -162,66 +162,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-_deps/fmt-build/CMakeFiles/fmt.dir/rule:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/fmt-build/CMakeFiles/fmt.dir/rule
-.PHONY : _deps/fmt-build/CMakeFiles/fmt.dir/rule
+src/CMakeFiles/orderbook.dir/rule:
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/orderbook.dir/rule
+.PHONY : src/CMakeFiles/orderbook.dir/rule
 
 # Convenience name for target.
-fmt: _deps/fmt-build/CMakeFiles/fmt.dir/rule
-.PHONY : fmt
+orderbook: src/CMakeFiles/orderbook.dir/rule
+.PHONY : orderbook
 
 # fast build rule for target.
-fmt/fast:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/build
-.PHONY : fmt/fast
+orderbook/fast:
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/orderbook.dir/build.make src/CMakeFiles/orderbook.dir/build
+.PHONY : orderbook/fast
 
-src/format.o: src/format.cc.o
-.PHONY : src/format.o
-
-# target to build an object file
-src/format.cc.o:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/src/format.cc.o
-.PHONY : src/format.cc.o
-
-src/format.i: src/format.cc.i
-.PHONY : src/format.i
-
-# target to preprocess a source file
-src/format.cc.i:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/src/format.cc.i
-.PHONY : src/format.cc.i
-
-src/format.s: src/format.cc.s
-.PHONY : src/format.s
-
-# target to generate assembly for a file
-src/format.cc.s:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/src/format.cc.s
-.PHONY : src/format.cc.s
-
-src/os.o: src/os.cc.o
-.PHONY : src/os.o
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-src/os.cc.o:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/src/os.cc.o
-.PHONY : src/os.cc.o
+main.cpp.o:
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/orderbook.dir/build.make src/CMakeFiles/orderbook.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-src/os.i: src/os.cc.i
-.PHONY : src/os.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-src/os.cc.i:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/src/os.cc.i
-.PHONY : src/os.cc.i
+main.cpp.i:
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/orderbook.dir/build.make src/CMakeFiles/orderbook.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-src/os.s: src/os.cc.s
-.PHONY : src/os.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-src/os.cc.s:
-	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f _deps/fmt-build/CMakeFiles/fmt.dir/build.make _deps/fmt-build/CMakeFiles/fmt.dir/src/os.cc.s
-.PHONY : src/os.cc.s
+main.cpp.s:
+	cd /Users/benburk/Desktop/root/Repos/orderbook/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/orderbook.dir/build.make src/CMakeFiles/orderbook.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -235,13 +211,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... fmt"
-	@echo "... src/format.o"
-	@echo "... src/format.i"
-	@echo "... src/format.s"
-	@echo "... src/os.o"
-	@echo "... src/os.i"
-	@echo "... src/os.s"
+	@echo "... orderbook"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

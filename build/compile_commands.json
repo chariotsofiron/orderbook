@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/Users/benburk/Desktop/root/Repos/orderbook/build/src",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-src/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wall -Wextra -Wpedantic -Wshadow -Wold-style-cast -Weffc++ -Wformat -Wconversion -Wuninitialized -march=native -std=gnu++17 -o CMakeFiles/orderbook.dir/main.cpp.o -c /Users/benburk/Desktop/root/Repos/orderbook/src/main.cpp",
+  "file": "/Users/benburk/Desktop/root/Repos/orderbook/src/main.cpp"
+},
+{
+  "directory": "/Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-src/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wall -Wextra -Wpedantic -Wshadow -Wold-style-cast -Weffc++ -Wformat -Wconversion -Wuninitialized -march=native -std=gnu++17 -o CMakeFiles/fmt.dir/src/format.cc.o -c /Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-src/src/format.cc",
+  "file": "/Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-src/src/format.cc"
+},
+{
+  "directory": "/Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-src/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wall -Wextra -Wpedantic -Wshadow -Wold-style-cast -Weffc++ -Wformat -Wconversion -Wuninitialized -march=native -std=gnu++17 -o CMakeFiles/fmt.dir/src/os.cc.o -c /Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-src/src/os.cc",
+  "file": "/Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-src/src/os.cc"
+}
+]

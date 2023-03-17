@@ -22,8 +22,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(fmt-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/fmtlib/fmt.git" "GIT_TAG" "master"
-                    SOURCE_DIR          "/Users/benburk/Desktop/root/Repos/microstructure/build/_deps/fmt-src"
-                    BINARY_DIR          "/Users/benburk/Desktop/root/Repos/microstructure/build/_deps/fmt-build"
+                    SOURCE_DIR          "/Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-src"
+                    BINARY_DIR          "/Users/benburk/Desktop/root/Repos/orderbook/build/_deps/fmt-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

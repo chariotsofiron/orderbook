@@ -1,32 +1,28 @@
 cmake_minimum_required(VERSION 3.25.0)
-include(FetchContent)
 project(orderbook)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
-set(
-    SOURCES
-    src/main.cpp
-)
-
-add_executable(${PROJECT_NAME} ${SOURCES})
-
-set(CMAKE_CXX_FLAGS_DEBUG_INIT "-fsanitize=address,undefined,integer -g")
 
 add_compile_options(
-    -Wall -Wextra -Wpedantic -Weffc++ -Wshadow -Wformat
-    -Wconversion -Wuninitialized -march=native
+    # Reasonable and standard
+    -Wall
+    -Wextra
+    # Others
+    -Wpedantic
+    -Wshadow
+    -Wold-style-cast
+    -Weffc++
+    -Wformat
+    -Wconversion
+    -Wuninitialized
+    -march=native
 )
 
-target_include_directories(
-    ${PROJECT_NAME}
-    PRIVATE 
-    ${PROJECT_SOURCE_DIR}/src
-)
+# Generate compile_commands.json to make it easier to work
+# with clang based tools. Used in combination with Ninja.
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-FetchContent_Declare(fmt
-  GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-  GIT_TAG master
-)
-FetchContent_MakeAvailable(fmt)
+add_subdirectory(src)
+add_subdirectory(dependencies)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE fmt)
+set(CMAKE_CXX_FLAGS_DEBUG_INIT "-fsanitize=address,undefined,integer -g")

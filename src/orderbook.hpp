@@ -2,42 +2,87 @@
 #include <map>
 #include <unordered_map>
 
+typedef uint64_t OrderId;
+typedef uint64_t Quantity;
+typedef uint64_t Price;
+
 struct Order {
-    uint64_t order_id;
-    /// @brief 6.4 fixed point number
-    uint64_t price;
-    uint64_t quantity;
+    OrderId id;
+    Quantity quantity;
 };
 
-class PriceLevel {
-   public:
-    auto add(const Order& order) -> void { orders.push_back(order); }
-    auto remove(const Order& order) -> void {
-        orders.erase(std::remove(orders.begin(), orders.end(), order));
-    }
-
-   private:
-    std::deque<Order> orders;
-};
-
-// manages a set of price buckets and allows us to
-// 1. find some bucket for a specifed price-level
-// 2. find the successor bucket for the specified price-level
-// 3. find the predecessor bucket for the specified price-level
-// 4. add a new price-bucket for a given price-level
-class PriceLevelManager {
-   private:
-    std::map<uint64_t, std::shared_ptr<PriceLevel>> levels;
-
-   public:
-    std::shared_ptr<PriceLevel> find(uint64_t price) {
-        if (auto it(this->levels.find(price)); it != this->levels.end()) {
-            return it->second;
+template<bool is_ask>
+class HalfBook {
+  public:
+    auto get_top_of_book() const -> std::pair<Price, Quantity> {
+        if (levels.empty()) {
+            return {0, 0};
         }
-        return nullptr;
+
+        auto it = levels.begin();
+        return {it->first, it->second.size()};
     }
 
-    void remove(uint64_t price) { this->levels.erase(price); }
+    auto add(Price price, Order order) -> void {
+        levels[price].push_back(order);
+    }
+
+    // cancel the order by setting the quantity to 0
+    auto cancel(OrderId order_id) -> void {
+        for (auto& [price, orders] : levels) {
+            for (auto& order : orders) {
+                if (order.id == order_id) {
+                    order.quantity = 0;
+                    return;
+                }
+            }
+        }
+    }
+
+  private:
+  // we use an ordered map to store the price levels
+  // each price level is a queue represented by a vector
+    std::map<
+        Price,
+        std::vector<Order>,
+        typename std::conditional<is_ask, std::greater<Price>, std::less<Price>>::type>
+        levels;
 };
 
-class OrderBook {};
+
+
+// An order book for a specific product
+class OrderBook {
+  public:
+
+    // Adds an order to the order book
+    auto add(const Price price, const Quantity qty, const bool is_ask)
+        -> OrderId {
+        OrderId order_id = this->next_order_id++;
+
+        Order order = {order_id, qty};
+        if (is_ask) {
+            this->asks.add(price, order);
+        } else {
+            this->bids.add(price, order);
+        }
+
+        return order_id;
+    }
+
+    auto remove(OrderId order_id) -> void {
+        bool is_ask = this->orders[order_id];
+        if (is_ask) {
+            this->asks.cancel(order_id);
+        } else {
+            this->bids.cancel(order_id);
+        }
+    }
+
+  private:
+    HalfBook<true> bids;
+    HalfBook<false> asks;
+    std::unordered_map<OrderId, bool> orders;
+    uint64_t next_order_id = 0;
+};
+
